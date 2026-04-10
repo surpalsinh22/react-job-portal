@@ -1,7 +1,9 @@
 # CareerHub – React Job Portal
 
-A Job Portal web application built using React.js, Context API, Tailwind CSS, and JSON Server.  
-It allows users to browse jobs, search, filter by category, save jobs, and apply through a form system.
+CareerHub is a job portal web application built using React.js.  
+It allows users to browse jobs, view details, search/filter jobs, save favorites, and apply through a form system.
+
+The project uses Context API for state management and LocalStorage for authentication and data persistence.
 
 ---
 
@@ -9,14 +11,14 @@ It allows users to browse jobs, search, filter by category, save jobs, and apply
 
 - Browse jobs from API
 - Job details page with full description
-- Search jobs by title, company, category
+- Search jobs by title, company, or category
 - Category-based filtering
 - Save and remove jobs (Context API + LocalStorage)
 - Apply form with validation
 - Simple authentication (Signup/Login using LocalStorage)
 - Store applied jobs in LocalStorage
-- Success page after form submission
-- Responsive UI with Tailwind CSS
+- Success page after submission
+- Responsive UI using Tailwind CSS
 
 ---
 
@@ -26,59 +28,63 @@ It allows users to browse jobs, search, filter by category, save jobs, and apply
 - React Router DOM
 - Context API
 - Tailwind CSS
-- JSON Server
+- MockAPI / JSON Server
 - LocalStorage
 
 ---
 
-Signup:
-- User stored in localStorage as "users"
+## Authentication Flow
 
-Login:
-- Match email and password
-- Store logged user in localStorage as "user"
+### Signup
+- User data is stored in LocalStorage under `users`
+
+### Login
+- Credentials are matched with stored users
+- Logged-in user is stored in LocalStorage as `user`
 
 ---
 
 ## Saved Jobs Logic
 
-- Uses Context API
-- Stored in localStorage as "savedJobs"
-- Prevent duplicate saving using array check
+- Implemented using Context API
+- Stored in LocalStorage as `savedJobs`
+- Duplicate saves are prevented using array check
 
 ---
 
 ## Routes
 
-- / → Home
-- /job/:id → Job Details
-- /apply/:id → Apply Form
-- /saved → Saved Jobs
-- /login → Login
-- /signup → Signup
-- /submitted → Success Page
+- `/` → Home (Job listing)
+- `/job/:id` → Job Details
+- `/apply/:id` → Apply Form
+- `/saved` → Saved Jobs
+- `/login` → Login Page
+- `/signup` → Signup Page
+- `/submitted` → Success Page
 
 ---
 
-## Features Flow
+## Application Flow
 
 1. User signs up
-2. Logs in
-3. Browses jobs
-4. Views job details
+2. User logs in
+3. Browses job listings
+4. Opens job details
 5. Saves job or applies
-6. Application stored in localStorage
-7. Success page shown after apply
+6. Application is stored in LocalStorage
+7. Success page is shown after submission
 
 ---
 
 ## Future Improvements
 
 - JWT authentication
-- MongoDB backend
-- Admin panel for posting jobs
-- Pagination
-- Better error handling
+- Backend with Node.js + MongoDB
+- Admin panel for job posting
+- Pagination & infinite scroll
+- Better error handling & loading states
+
+---
 
 ## Author
 
